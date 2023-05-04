@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-const Footer = () => {
+const Home = () => {
     return (
         <div>
-            <h6>foot</h6>
+            <h1>Home</h1>
         </div>
     );
 };
 
-export default Footer;
+export default Home;

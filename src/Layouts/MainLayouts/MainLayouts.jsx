@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-const Nav = () => {
+const MainLayouts = ({props}) => {
+    console.log(props);
+
     return (
         <div>
-            
+            <h1>Main</h1>
         </div>
     );
 };
 
-export default Nav;
+export default MainLayouts;
