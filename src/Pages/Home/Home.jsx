@@ -9,7 +9,7 @@ import jFood4 from '../../assets/j4.jpg';
 
 const Home = () => {
     return (
-        <div className='d-flex border-light p-2 mb-4 rounded-2 bg-info bg-gradient'>
+        <div className='d-flex border-light p-2 mb-4 m-2 rounded-4 bg-info bg-gradient'>
             <div className=' m-4 rounded col-4'>
                 <Carousel variant="dark">
                     <Carousel.Item>

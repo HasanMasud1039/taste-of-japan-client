@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Menubar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Button } from "react-bootstrap";
 
 const Menubar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -20,24 +21,25 @@ const Menubar = () => {
             <h1 className="menu_title">Taste of <span className="japan">JAPAN</span></h1>
             <div className="menu-container">
                 <Link to="/">
-                    <li>Home</li>
+                <Button className="mx-2" variant="primary">Home</Button>
                 </Link>
-                <Link to="/services">
-                    <li>Services</li>
+                <Link to="/blog">
+                <Button className="mx-2" variant="primary">Blog</Button>
                 </Link>
 
                 {user?.email ? (
                     <li>
-                        <button onClick={handleLogout}>Logout</button>
+                        {/* <button onClick={handleLogout}>Logout</button> */}
+                        <Button className="mx-2" variant="primary" onClick={handleLogout} >Logout</Button>
                     </li>
                 ) : (
                     <Link to="/login">
-                        <li>Login</li>
+                        <Button className="mx-2" variant="primary">Login</Button>
                     </Link>
                 )}
                 {/* <li>{user?.email}</li> */}
                 <Link to="/register">
-                    <li>Registration</li>
+                <Button className="mx-2" variant="primary">Registration</Button>
                 </Link>
 
             </div>

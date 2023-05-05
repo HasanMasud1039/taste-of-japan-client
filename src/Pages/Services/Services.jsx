@@ -11,7 +11,7 @@ const Services = ({ service }) => {
     // console.log(service);
 
     return (
-        <Container className='d-flex' style={{display:'flex'}}>
+        <Container  style={{display:'flex'}}>
             {
                 typeof (service) !== "undefined" ?
 
