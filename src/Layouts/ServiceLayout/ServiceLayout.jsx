@@ -6,6 +6,7 @@ import MainLayouts from '../MainLayouts/MainLayouts';
 import Services from '../../Pages/Services/Services';
 import './ServiceLayout.css'
 import Home from '../../Pages/Home/Home';
+import Footer from '../../Pages/Footer/Footer';
 
 const ServiceLayout = () => {
     const [servicesData, setServicesData] = useState([]);
@@ -20,7 +21,6 @@ const ServiceLayout = () => {
     return (
         <div>
             <MenuBar></MenuBar>
-            {/* <MainLayouts></MainLayouts> */}
             <Home></Home>
             <div className='service'>
             {
@@ -36,6 +36,7 @@ const ServiceLayout = () => {
             }
             </div>
             <Outlet></Outlet>
+            <Footer/>
         </div>
     );
 };
