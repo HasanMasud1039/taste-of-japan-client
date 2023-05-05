@@ -21,25 +21,25 @@ const Menubar = () => {
             <h1 className="menu_title">Taste of <span className="japan">JAPAN</span></h1>
             <div className="menu-container">
                 <Link to="/">
-                <Button className="mx-2" variant="primary">Home</Button>
+                <Button className="btn mx-2">Home</Button>
                 </Link>
                 <Link to="/blog">
-                <Button className="mx-2" variant="primary">Blog</Button>
+                <Button className="btn mx-2">Blog</Button>
                 </Link>
 
                 {user?.email ? (
                     <li>
                         {/* <button onClick={handleLogout}>Logout</button> */}
-                        <Button className="mx-2" variant="primary" onClick={handleLogout} >Logout</Button>
+                        <Button className="btn mx-2"  onClick={handleLogout} >Logout</Button>
                     </li>
                 ) : (
                     <Link to="/login">
-                        <Button className="mx-2" variant="primary">Login</Button>
+                        <Button className="btn mx-2" >Login</Button>
                     </Link>
                 )}
                 {/* <li>{user?.email}</li> */}
                 <Link to="/register">
-                <Button className="mx-2" variant="primary">Registration</Button>
+                <Button className="btn mx-2">Registration</Button>
                 </Link>
 
             </div>

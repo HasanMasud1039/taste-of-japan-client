@@ -2,5 +2,17 @@
     background-color: rgb(243, 204, 153);
 }
 .caption h5{
-    color: yellow;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0, 204, 255);
+    font-size: 30px;
+    font-weight: 700;
+}
+.caption p{
+    font-size: large;
+    color: rgb(179, 250, 14);
+}
+.description{
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: darkolivegreen;
 }

@@ -15,7 +15,7 @@ const Services = ({ service }) => {
             {
                 typeof (service) !== "undefined" ?
 
-                    <Card style={{borderRadius: '20px' , marginBottom:'20px' ,backgroundColor:'skyblue', width: '24rem' }}>
+                    <Card style={{borderRadius: '20px' , marginBottom:'20px' ,backgroundColor:'antiqueWhite', width: '24rem' }}>
                         <Card.Img style={{ width: '100%', margin: 'auto', height: "16rem", borderRadius: '20px' }} variant="top" src={service.photo_url} />
                         <Card.Body style={{margin: '20px'}}>
                             <Card.Title><h1>{service.name}</h1></Card.Title>

@@ -3,15 +3,17 @@ import LoginLayout from "../Layouts/LoginLayouts/LoginLayout";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ServiceLayout from "../Layouts/ServiceLayout/ServiceLayout";
-import Services from "../Pages/Services/Services";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import PrivateRoute from "./PrivateRoute";
 import Blog from "../Pages/Blog/Blog";
+import ErrorPage from "../Pages/ErrorPage";
+import Services from "../Pages/Services/Services";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <LoginLayout></LoginLayout>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: '/',
@@ -32,20 +34,24 @@ const router = createBrowserRouter([
       
       ],
     },
-
+    {
+      path: '*',
+      element: <h3 className='font-bold text-4xl m-8'>404 Not found!</h3>
+    },
     {
       path: "services",
       element: <ServiceLayout></ServiceLayout>,
-      loader: ()=> fetch("http://localhost:5000/chefs"),
+      errorElement: <ErrorPage></ErrorPage>,
+      loader: ()=> fetch("https://taste-of-japan.vercel.app/chefs"),
       children: [
-        // {
-        //   path: "services",
-        //   element: <Services></Services>,
-        // },
+        {
+          path: "services",
+          element: <Services></Services>,
+        },
         {
           path: ":id",
           element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-          loader: ({params}) => (fetch(`http://localhost:5000/chefs/${params.id}`))
+          loader: ({params}) => (fetch(`https://taste-of-japan.vercel.app/chefs/${params.id}`))
         }
       ],
     },

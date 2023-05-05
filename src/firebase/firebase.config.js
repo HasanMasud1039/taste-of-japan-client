@@ -7,13 +7,13 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyC3Bj9G_aAnuOOdjxg_TA3k4_t9ZEWZlcQ",
-  authDomain: "taste-of-japan-80317.firebaseapp.com",
-  projectId: "taste-of-japan-80317",
-  storageBucket: "taste-of-japan-80317.appspot.com",
-  messagingSenderId: "490838856056",
-  appId: "1:490838856056:web:076ca8eeddb709e919f88d",
-  measurementId: "G-918M0VN0L7"
+  apiKey:  import.meta.env.VITE_APIKEY,
+  authDomain:  import.meta.env.VITE_AUTHDOMAIN,
+  projectId:  import.meta.env.VITE_PROJECTID,
+  storageBucket:  import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId:  import.meta.env.VITE_MESSAGINGSENDERID,
+  appId:  import.meta.env.VITE_APPID,
+  measurementId: import.meta.env.VITE_MEASUREMENTID
 };
 
 // Initialize Firebase

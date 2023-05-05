@@ -62,7 +62,7 @@ const Home = () => {
                 </Carousel>
             </div>
             <div className='m-4 fs-5 fw-light'>
-                <p>Japanese food culture is renowned for its focus on fresh, seasonal ingredients and beautifully presented dishes.
+                <p className='description'>Japanese food culture is renowned for its focus on fresh, seasonal ingredients and beautifully presented dishes.
                     Traditional Japanese meals typically include rice, miso soup, and a main dish such as grilled fish or meat.
                     Additionally, sushi and sashimi are well-known Japanese foods that are typically made with raw fish served with vinegar-seasoned rice and soy sauce.
                     Another popular dish in Japanese cuisine is ramen, a noodle soup dish that features a flavorful broth and various toppings.

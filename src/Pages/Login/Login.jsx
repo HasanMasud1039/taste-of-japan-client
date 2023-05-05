@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import './Login.css'
 import { Button, Container, Form } from "react-bootstrap";
 import { AuthContext } from "../../Providers/AuthProvider";
 import {
@@ -98,18 +98,18 @@ const Login = () => {
                         alt=""
                     />
                 </div>
-                <div className="">
+                <div>
                     <img onClick={handleGithubSignIn}
                         className=" social-button"
                         src="https://i.ibb.co/g9f4P0S/github-btn.png"
                         alt=""
                     />
                 </div>
-                { user && <div>
+                {/* { user && <div>
                 <h3>User: {user.displayName}</h3>
                 <h5>Email: {user.email}</h5>
                 <img src={user.photoURL} alt="" />
-            </div>}
+            </div>} */}
             </div>
 
         </Container>

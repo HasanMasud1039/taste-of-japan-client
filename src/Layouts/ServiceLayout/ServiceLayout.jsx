@@ -13,7 +13,7 @@ const ServiceLayout = () => {
     const services = useLoaderData();
 
     useEffect(() => {
-      fetch("http://localhost:5000/chefs")
+      fetch("https://taste-of-japan.vercel.app/chefs")
         .then((response) => response.json())
         .then((data) => setServicesData(data));
     }, []);
