@@ -5,6 +5,7 @@ import { Outlet, useLoaderData } from 'react-router-dom';
 import MainLayouts from '../MainLayouts/MainLayouts';
 import Services from '../../Pages/Services/Services';
 import './ServiceLayout.css'
+import Home from '../../Pages/Home/Home';
 
 const ServiceLayout = () => {
     const [servicesData, setServicesData] = useState([]);
@@ -20,6 +21,7 @@ const ServiceLayout = () => {
         <div>
             <MenuBar></MenuBar>
             {/* <MainLayouts></MainLayouts> */}
+            <Home></Home>
             <div className='service'>
             {
                 services.map(service =>
