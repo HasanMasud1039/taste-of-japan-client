@@ -9,7 +9,6 @@ const LoginLayout = () => {
     return (
         <div>
             <MenuBar></MenuBar>
-            {/* <MainLayouts props = { props }></MainLayouts> */}
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
