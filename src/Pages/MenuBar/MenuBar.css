@@ -1,14 +1,13 @@
 .Menubar-container{
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 30px 20px;
     /* background-color: rgb(116, 210, 247); */
     margin: 10px 0px;
     border-radius: 10px;
     background-image: linear-gradient(rgb(206, 235, 41), red),url('../../assets/various1.jpg');
     background-repeat: no-repeat;
     background-blend-mode: darken;
-    
     background-size: cover;
 }
 .menu-container{

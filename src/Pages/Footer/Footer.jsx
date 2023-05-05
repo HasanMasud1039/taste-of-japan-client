@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div className='d-flex justify-content-around mb-4  bg-dark text-white p-4 rounded-4'>
+        <div className='d-flex justify-content-around mb-4 mt-4 bg-dark text-white p-2 rounded-4'>
             <div className='text-white fw-bold m-4'>
                 <h3>Taste of <span className='fw-bold text-danger'>JAPAN</span></h3>
                 <div className='d-flex mt-4 justify-content-around'>
