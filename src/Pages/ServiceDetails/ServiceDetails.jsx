@@ -4,17 +4,25 @@ import React, { useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect } from "react";
-import { Card, Container, ListGroup } from "react-bootstrap";
+import { Button, Card, Container, ListGroup } from "react-bootstrap";
 import { FaCookieBite, FaHeart, FaSuitcase, FaThumbsUp } from "react-icons/fa";
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const ServiceDetails = () => {
   const { id } = useParams();
   console.log(id);
   const loadedServiceData = useLoaderData();
 
-  console.log(loadedServiceData.recipes);
+  const [accepted, setAccepted] = useState(true);
+  const handleAccepted = (id, name) => {
+    setAccepted(id);
+    toast(`You add ${name} as Favourite`);
+    console.log(id, name);
+}
+
   return (
 
     <Container>
@@ -29,7 +37,10 @@ const ServiceDetails = () => {
                 <Card.Img style={{ display: 'flex', width: '18rem', height: '20rem', borderRadius: '10px' }} variant="top" src={recipe.recipe_photo_url} />
 
                 <div className="d-flex" >
-                  <FaHeart style={{ color: 'red', width: '50px', height: '50px', margin: '10px 10px 0px 20px' }}></FaHeart>
+                  <Button className="bg-transparent border-0" onClick={()=>handleAccepted(recipe.recipe_id, recipe.recipe_name)} disabled={accepted[0] == 'null'} >
+                    <FaHeart type="checkbox" style={{ color: 'red', width: '40px', height: '40px', margin: '10px 10px 0px 20px' }}></FaHeart>
+                    </Button> 
+                  
 
                   <Rating style={{ maxWidth: "160px", height: '40px', margin: '10px 10px 0px 20px' }} value={recipe.rating} readOnly />
 
@@ -70,16 +81,24 @@ const ServiceDetails = () => {
                 </Card.Body>
               </div>
           </div>
-
-
-
-
-
             </Card>
           </div>
         )
       }
-
+<ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
+{/* Same as */}
+<ToastContainer />
 
     </Container>
   );

@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { Button, Container, Form } from "react-bootstrap";
-import SocialLoginBtn from "../SocialLoginBtn/SocialLoginBtn";
 import { AuthContext } from "../../Providers/AuthProvider";
 import {
     GoogleAuthProvider,
