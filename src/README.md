@@ -7,4 +7,4 @@
 #can read Blog
 
 
-Live link of website: 
+Live link of website: https://taste-of-japan-80317.web.app
