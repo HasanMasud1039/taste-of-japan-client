@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-const MainLayouts = ({props}) => {
-    console.log(props);
+const MainLayouts = () => {
 
     return (
         <div>

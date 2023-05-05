@@ -17,7 +17,7 @@ const Menubar = () => {
     };
     return (
         <div className="Menubar-container">
-            <h1>Taste of <span className="japan">JAPAN</span></h1>
+            <h1 className="menu_title">Taste of <span className="japan">JAPAN</span></h1>
             <div className="menu-container">
                 <Link to="/">
                     <li>Home</li>

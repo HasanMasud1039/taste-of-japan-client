@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Services = ({ service }) => {
 
-    console.log(service);
+    // console.log(service);
 
     return (
         <Container style={{display:'flex'}}>
@@ -19,10 +19,11 @@ const Services = ({ service }) => {
                         <Card.Img style={{ width: '100%', margin: 'auto', height: "16rem", borderRadius: '20px' }} variant="top" src={service.photo_url} />
                         <Card.Body style={{margin: '20px'}}>
                             <Card.Title><h1>{service.name}</h1></Card.Title>
-                            <Card.Text style={{fontSize: "18px" ,fontWeight:'bold', color: 'black' }}> <FaSuitcase style={{ marginRight: '10px', color: 'blue' }}></FaSuitcase>
+                            <div style={{display: 'inline-flex'}}>
+                            <Card.Text style={{fontSize: "18px" ,fontWeight:'bold', color: 'black', marginRight:'15px' }}> <FaSuitcase style={{ marginRight: '10px', color: 'blue' }}></FaSuitcase>
                                 {service.years_of_experience} years
                             </Card.Text>
-                            <Card.Text style={{fontSize: "18px" ,fontWeight:'bold', color: 'black' }}> 
+                            <Card.Text style={{fontSize: "18px" ,fontWeight:'bold', color: 'black', marginRight:'10px' }}> 
                             <FaCookieBite style={{color:'blue', marginRight:'10px'}}></FaCookieBite>
                                 {service.num_recipes} unique recipes
                             </Card.Text>
@@ -30,7 +31,9 @@ const Services = ({ service }) => {
                             <FaThumbsUp style={{color:'blue', marginRight:'10px'}}/>
                                 {service.num_likes}
                             </Card.Text>
-                            <Button style={{fontWeight:'bold',fontSize:'16px', padding:"10px", borderRadius:'5px',color:'White', backgroundColor:'maroon' }} variant="primary"><Link to='/serviceDetails'>View Recipes</Link></Button>
+                            </div>
+                            <Card.Text style={{fontSize:'18px',color:'GrayText', fontWeight:'bold'}}>{service.details}</Card.Text>
+                            <Button style={{fontWeight:'bold',fontSize:'16px', padding:"10px", borderRadius:'5px', color:'white', backgroundColor:'maroon' }} variant="primary"><Link style={{color:'white', textDecoration:'none'}} to = {`/services/${service.id}`} >View Recipes</Link></Button>
                         </Card.Body>
                     </Card>
                     : <></>

@@ -32,18 +32,15 @@ const router = createBrowserRouter([
       element: <ServiceLayout></ServiceLayout>,
       loader: ()=> fetch("http://localhost:5000/chefs"),
       children: [
-        {
-          path: "/services",
-          element: <Services></Services>,
-        },
+        // {
+        //   path: "services",
+        //   element: <Services></Services>,
+        // },
         {
           path: ":id",
-          element: (
-            <PrivateRoute>
-              <ServiceDetails></ServiceDetails>
-            </PrivateRoute>
-          ),
-        },
+          element: <ServiceDetails></ServiceDetails>,
+          loader: ({params}) => (fetch(`http://localhost:5000/chefs/${params.id}`))
+        }
       ],
     },
   ]);
