@@ -27,7 +27,24 @@
 .japan{
     color: red;
 }
-.btn{
-    background-color: antiquewhite;
-    color: aqua;
+.navBtn{
+    background: rgb(230, 145, 34);
+    
+}
+.dropdown{
+    display: none;
+}
+
+@media  (max-width : 576px){
+    .menu-container{
+        display: none;
+        /* grid-template-columns: repeat(2, 1fr); */
+
+    }
+    .dropdown{
+        display: block;
+    }
+    .menu_title{
+        font-size: 24px;
+    }
 }

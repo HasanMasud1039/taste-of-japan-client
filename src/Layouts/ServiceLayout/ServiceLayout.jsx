@@ -7,36 +7,34 @@ import Services from '../../Pages/Services/Services';
 import './ServiceLayout.css'
 import Home from '../../Pages/Home/Home';
 import Footer from '../../Pages/Footer/Footer';
+import useTitle from '../../Hooks/useTitle';
 
 const ServiceLayout = () => {
     const [servicesData, setServicesData] = useState([]);
     const services = useLoaderData();
+    useTitle('Home');
 
     useEffect(() => {
-      fetch("https://taste-of-japan.vercel.app/chefs")
-        .then((response) => response.json())
-        .then((data) => setServicesData(data));
+        fetch("https://taste-of-japan.vercel.app/chefs")
+            .then((response) => response.json())
+            .then((data) => setServicesData(data));
     }, []);
     // console.log(services);
     return (
-        <div>
+        <div className='bg-black'>
             <MenuBar></MenuBar>
             <Home></Home>
-            <div className='service'>
-            {
-                services.map(service =>
-                // <ServiceList key={service.id} service={service}></ServiceList>,
-                    // console.log(service.name);
-                    // <MainLayouts key = {service.id} service = { service }></MainLayouts>
-                
-                    // <img src={service.photo_url} alt="" />,
-                    <Services key={service.id} service = { service }></Services>
-                
-                )
-            }
-            </div>
             <Outlet></Outlet>
-            <Footer/>
+            <h1 className=' bar'>Our Chefs</h1>
+            <div className='service'>
+                {
+                    services.map(service =>
+                        <Services key={service.id} service={service}></Services>
+                    )
+                }
+            </div>
+
+            <Footer />
         </div>
     );
 };

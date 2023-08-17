@@ -1,0 +1,25 @@
+.body{
+    display: flex;
+    padding: 10px;
+    margin: auto;
+}
+.author{
+    /* w-25  text-white  fs-5 p-2 rounded  */
+    width: 30%;
+    color: white;
+
+}
+
+
+@media  (max-width : 576px){
+    .body{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 2px;
+        width: 100%;
+    }
+    .author{
+        width: 70%;
+        margin: auto;
+    }
+}

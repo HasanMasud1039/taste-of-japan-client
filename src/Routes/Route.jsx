@@ -7,54 +7,66 @@ import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import PrivateRoute from "./PrivateRoute";
 import Blog from "../Pages/Blog/Blog";
 import ErrorPage from "../Pages/ErrorPage";
-import Services from "../Pages/Services/Services";
+import BlogCard from "../Pages/BlogCard/BlogCard";
+import Terms from "../Pages/Terms/Terms";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <LoginLayout></LoginLayout>,
-      errorElement: <ErrorPage></ErrorPage>,
-      children: [
-        {
-          path: '/',
-          element: <Navigate to={'/services'}></Navigate>
+  {
+    path: "/",
+    element: <LoginLayout></LoginLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: '/',
+        element: <Navigate to={'/services'}></Navigate>
       },
-        {
-          path: "login",
-          element: <Login></Login>,
-        },
-        {
-          path: "register",
-          element: <Register></Register>,
-        },
-        {
-          path: '/blog',
-          element: <Blog></Blog>
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
+      },
+      {
+        path: '/terms',
+        element: <Terms></Terms>,
+        errorElement: <ErrorPage></ErrorPage>,
+      },
+      {
+        path: 'blog',
+        element: <Blog></Blog>,
+        loader: () => (fetch(`https://taste-of-japan.vercel.app/blogs`)),
+        children: [
+          {
+            path: ':id',
+            element: <BlogCard></BlogCard>,
+            loader: ({ params }) => (fetch(`https://taste-of-japan.vercel.app/blogs/${params.id}`)),
+            errorElement: <ErrorPage></ErrorPage>
+          }
+        ]
+      },
+    ],
+  },
+  {
+    path: '*',
+    element: <h3 className='font-bold text-4xl m-8'>404 Not found!</h3>
+  },
+
+  {
+    path: "services",
+    element: <ServiceLayout></ServiceLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
+    loader: () => fetch("https://taste-of-japan.vercel.app/chefs"),
+    children: [
+      {
+        path: ":id",
+        element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+        loader: ({ params }) => (fetch(`https://taste-of-japan.vercel.app/chefs/${params.id}`))
       }
-      
-      ],
-    },
-    {
-      path: '*',
-      element: <h3 className='font-bold text-4xl m-8'>404 Not found!</h3>
-    },
-    {
-      path: "services",
-      element: <ServiceLayout></ServiceLayout>,
-      errorElement: <ErrorPage></ErrorPage>,
-      loader: ()=> fetch("https://taste-of-japan.vercel.app/chefs"),
-      children: [
-        {
-          path: "services",
-          element: <Services></Services>,
-        },
-        {
-          path: ":id",
-          element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-          loader: ({params}) => (fetch(`https://taste-of-japan.vercel.app/chefs/${params.id}`))
-        }
-      ],
-    },
-  ]);
-  
-  export default router;
+    ],
+  }
+
+]);
+
+export default router;

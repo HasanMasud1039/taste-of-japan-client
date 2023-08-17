@@ -7,7 +7,7 @@ import Footer from '../../Pages/Footer/Footer';
 
 const LoginLayout = () => {
     return (
-        <div>
+        <div className='bg-dark'> 
             <MenuBar></MenuBar>
             <Outlet></Outlet>
             <Footer></Footer>

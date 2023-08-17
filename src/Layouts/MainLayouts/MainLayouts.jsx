@@ -9,10 +9,10 @@ const MainLayouts = () => {
 
     return (
         <div>
-            <Menubar></Menubar>
+            {/* <Menubar></Menubar>
             <Home></Home>
             <ServiceDetails></ServiceDetails>
-            <Footer></Footer>
+            <Footer></Footer> */}
 
         </div>
     );

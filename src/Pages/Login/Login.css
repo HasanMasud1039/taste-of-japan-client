@@ -4,3 +4,32 @@
     margin-top: 20px;
     border-radius: 10px;
 }
+.login{
+    display: inline-flex;
+}
+.body{
+    width: 60%;
+    
+}
+.title{
+    color:white;
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+@media  (max-width : 576px){
+    .container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* width: 100%; */
+    }
+    .body{
+        width: 80%;
+        
+    }
+}

@@ -1,0 +1,21 @@
+.blogs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* style={{display:'grid',gap:4, gridTemplateColumns:'repeat(6, 1fr)'}} */
+.content{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+}
+
+@media  (max-width : 576px){
+    .blogs{
+        grid-template-columns: repeat(21 1fr);
+    }
+    .content{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3px;
+    }
+}

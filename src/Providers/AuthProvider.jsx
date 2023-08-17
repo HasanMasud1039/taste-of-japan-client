@@ -2,13 +2,8 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { createContext } from "react";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+
 
 import { useState } from "react";
 import { useEffect } from "react";
@@ -20,11 +15,13 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  console.log("USerName : ", user?.displayName)
 
   const registerUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
+
 
   const loginUser = (email, password) => {
     setLoading(true);
@@ -35,18 +32,23 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+  const updateUserProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+        displayName: name, photoURL: photo
+    });
+}
 
-  useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (loggedInUser) => {
-      setUser(loggedInUser);
-      setLoading(false);
+useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
+        setUser(currentUser);
+        setLoading(false);
     });
     return () => {
-      unSubscribe();
-    };
-  }, []);
+        return unsubscribe();
+    }
+}, [])
 
-  const authInfo = { registerUser, user, logOut, loginUser,  loading };
+  const authInfo = { registerUser, user, logOut, loginUser, loading, updateUserProfile };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

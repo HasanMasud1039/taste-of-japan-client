@@ -10,12 +10,12 @@ import './Home.css'
 
 const Home = () => {
     return (
-        <div className='carousel d-flex border-light p-2 mb-4 m-2 rounded-4 bg-gradient'>
-            <div className=' m-4 rounded col-4'>
-                <Carousel variant="dark">
-                    <Carousel.Item>
+        <div className='carousel1   p-2 rounded-4 bg-gradient'>
+            <div className='items '>
+                <Carousel variant="dark" >
+                    <Carousel.Item >
                         <img
-                            className="jFood position-relative rounded d-block w-100 "
+                            className="jFood position-relative"
                             src={jFood1}
                             alt="First slide"
                         />
@@ -24,35 +24,35 @@ const Home = () => {
                             <p>Yakitori made from chicken offal have traditionally been predominant, though thanks to the sweet soy and mirin glaze commonly used</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item >
                         <img
-                            className="rounded d-block w-100"
+                            className="jFood "
                             src={jFood4}
                             alt="First slide"
                         />
-                        <Carousel.Caption  className='caption'>
+                        <Carousel.Caption className='caption'>
                             <h5>Tempura</h5>
                             <p>The joys of fried food are shared worldwide, and Japan does it exceptionally well with tempura.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item >
                         <img
-                            className="rounded d-block w-100"
+                            className="jFood "
                             src={jFood2}
                             alt="Second slide"
                         />
-                        <Carousel.Caption  className='caption'>
+                        <Carousel.Caption className='caption'>
                             <h5 >Sushi & Sashimi</h5>
                             <p> Sushi and Sashimi are often served together as two of the more common Japanese dishes.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item >
                         <img
-                            className=" rounded d-block w-100"
+                            className="jFood  "
                             src={jFood3}
                             alt="Third slide"
                         />
-                        <Carousel.Caption  className='caption'>
+                        <Carousel.Caption className='caption'>
                             <h5>Sukiyaki</h5>
                             <p>
                                 There s a good chance of eating sukiyaki on New Year s Day in Japan, athe beef dish, significant regional distinctions as to the cooking method
@@ -67,10 +67,10 @@ const Home = () => {
                     Additionally, sushi and sashimi are well-known Japanese foods that are typically made with raw fish served with vinegar-seasoned rice and soy sauce.
                     Another popular dish in Japanese cuisine is ramen, a noodle soup dish that features a flavorful broth and various toppings.
                     Japanese food is also known for its healthy qualities, with many dishes incorporating vegetables, seafood, and other wholesome ingredients.
-                     </p>
+                </p>
             </div>
         </div>
-        
+
     );
 };
 
