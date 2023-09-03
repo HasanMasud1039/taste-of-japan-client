@@ -36,12 +36,12 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element: <Blog></Blog>,
-        loader: () => (fetch(`https://taste-of-japan.vercel.app/blogs`)),
+        loader: () => (fetch(`https://taste-of-japan-server.vercel.app/blogs`)),
         children: [
           {
             path: ':id',
             element: <BlogCard></BlogCard>,
-            loader: ({ params }) => (fetch(`https://taste-of-japan.vercel.app/blogs/${params.id}`)),
+            loader: ({ params }) => (fetch(`https://taste-of-japan-server.vercel.app/blogs/${params.id}`)),
             errorElement: <ErrorPage></ErrorPage>
           }
         ]
@@ -57,12 +57,12 @@ const router = createBrowserRouter([
     path: "services",
     element: <ServiceLayout></ServiceLayout>,
     errorElement: <ErrorPage></ErrorPage>,
-    loader: () => fetch("https://taste-of-japan.vercel.app/chefs"),
+    loader: () => fetch("https://taste-of-japan-server.vercel.app/chefs"),
     children: [
       {
         path: ":id",
         element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-        loader: ({ params }) => (fetch(`https://taste-of-japan.vercel.app/chefs/${params.id}`))
+        loader: ({ params }) => (fetch(`https://taste-of-japan-server.vercel.app/chefs/${params.id}`))
       }
     ],
   }

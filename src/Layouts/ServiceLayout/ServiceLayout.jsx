@@ -15,7 +15,7 @@ const ServiceLayout = () => {
     useTitle('Home');
 
     useEffect(() => {
-        fetch("https://taste-of-japan.vercel.app/chefs")
+        fetch("https://taste-of-japan-server.vercel.app/chefs")
             .then((response) => response.json())
             .then((data) => setServicesData(data));
     }, []);
